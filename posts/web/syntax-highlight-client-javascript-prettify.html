@@ -9,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<!-- Our site title and description -->
-	<title>Home | Ivan Georgiev</title>
+	<title>Client Side Code Syntax Highlighting with JavaScript and prettify.js | Ivan Georgiev</title>
 	<meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
 	<meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
 	<meta name="author" content="Your Name" />
@@ -57,9 +57,9 @@
                     <li
                         typeof="sioc:Page"
                         about="/index.html"
-                        class="active"
+                        class=""
                     >
-                        <a href="/index.html" property="dc:title"><span class="glyphicon glyphicon-home"></span>
+                        <a href="/index.html" property="dc:title">
                             Home
                         </a>
                     </li>
@@ -69,7 +69,7 @@
                         about="/blog.html"
                         class=""
                     >
-                        <a href="/blog.html" property="dc:title"><span class="glyphicon glyphicon-edit"></span>
+                        <a href="/blog.html" property="dc:title">
                             IT Blog
                         </a>
                     </li>
@@ -79,7 +79,7 @@
                         about="/contact.html"
                         class=""
                     >
-                        <a href="/contact.html" property="dc:title"><span class="glyphicon glyphicon-envelope"></span>
+                        <a href="/contact.html" property="dc:title">
                             Contact me
                         </a>
                     </li>
@@ -95,10 +95,108 @@
 	<div class="container">
 		<!-- Content -->
 		<section id="content" class="content">
-			<article id="page" class="page">
-	<h1>Home</h1>
-	<div class="page-content"></div>
+			<article id="post" class="post">
+	<h1>Client Side Code Syntax Highlighting with JavaScript and prettify.js</h1>
+	<div class="post-content"><p>Prettify script can be used to highlight code on web pages. It is a client side JavaScript and works entirely in the browser.</p>
+
+<p>You can <a href="https://github.com/google/code-prettify">download the Prettify library from github</a> or link it on github:</p>
+
+<pre class="no-highlight prettyprint">
+&lt;script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3>Highlight Code</h3>
+
+<p>To highglight source code, enclose your code in `code` tag and add `prettyprint` class to the `pre` tag. Here is an example of 
+a Python that converts temperature value from Celsius to Fahrenheit:</p>
+
+<pre  class="no-highlight prettyprint">
+&lt;pre  class="prettyprint"&gt;
+def celsius_from_fahrenheit(temp):
+    return (temp - 32)*5.0 / 9.0
+&lt;/pre&gt;
+</pre>
+
+<p>The browser will render this as follows:</p>
+
+<pre  class="no-highlight prettyprint">
+def celsius_from_fahrenheit(temp):
+    return (temp - 32)*5.0 / 9.0
+</pre>
+
+<p>As you can see the Prettify script is very easy to use. Specifying the language is not required, but if you like to hint the script, you can add a language hint:</p>
+
+<pre  class="no-highlight prettyprint">
+&lt;pre  class="prettyprint lang-py"&gt;
+def celsius_from_fahrenheit(temp):
+    return (temp - 32)*5.0 / 9.0
+&lt;/pre&gt;
+</pre>
+
+<h3>Highlight Skin</h3>
+
+<p>You can go beyond the default skin and select different skin. Add `skin=skinname` url parameter to the javascript src attribute.</p>
+
+<pre class="no-highlight prettyprint">
+&lt;script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"&gt;&lt;/script&gt;
+</pre>
+
+<h3>Line Numbers</h3>
+
+<p>By default no line numbers are shown with the highlighted code. To enable line numbers, add `linenums` class to the enclosing `pre` tag. If you want 
+to start numbering from a certain line number, for example 123, specify the class as `ilnenums:120'.</p>
+
+<pre  class="no-highlight prettyprint">
+&lt;pre  class="prettyprint linenums:120"&gt;
+def celsius_from_fahrenheit(temp):
+    """
+    Convert temperature value from Fahrenheit to Celsius.
+    """
+    return (temp - 32)*5.0 / 9.0
+    
+def fahrenheit_from_celsius(temp_fahrenheit):
+    """
+    Convert temperature value from Celsius to Fahrenheit.
+    """
+    return (temp_fahrenheit*9 + 160) /
+    
+&lt;/pre&gt;
+</pre>
+
+<p>And the result.</p>
+
+<pre  class="no-highlight prettyprint linenums:120">
+def celsius_from_fahrenheit(temp):
+    """
+    Convert temperature value from Fahrenheit to Celsius.
+    """
+    return (temp - 32) * 5.0 / 9.0
+    
+def fahrenheit_from_celsius(temp_fahrenheit):
+    """
+    Convert temperature value from Celsius to Fahrenheit.
+    """
+    return (temp_fahrenheit * 9 + 160) / 5.0
+</pre>
+
+<p>Yes, you are right. Line numbers are shown only on each fifth line. This is a feature. To turn on the line numbering for all the lines, you need to modify 
+the document stylesheet. Add following:</p>
+
+<pre class="no-highlight prettyprint">
+&lt;style&gt;
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+   { list-style-type: decimal !important }
+&lt;/style&gt;
+</pre>
+
+<p>Here is an example on JSFiddle.</p>
+
+<iframe width="100%" height="300" src="//jsfiddle.net/baobabko/d9cahgyd/embedded/result,css,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
 </article>
+
+<footer>
+</footer>
 		</section>
     <hr>
 		<!-- Footer -->
@@ -156,6 +254,6 @@ var inject = function(){
 	} else {
 		inject();
 	}
-})();</script><script defer="defer"  src="/ext/jquery-1.11.3.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/ext/bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+})();</script><script defer="defer"  src="/ext/jquery-1.11.3.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/ext/bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/js/app.js"></script><script defer="defer"  src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js?skin=desert"></script>
 </body>
 </html>
