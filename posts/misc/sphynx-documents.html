@@ -93,37 +93,8 @@
 		<section id="content" class="content">
 			<article id="post" class="post">
 	<h1>Set Sublime Text Editor Tab Size for a File Type and Globally</h1>
-	<div class="post-content"><p>As there is no single silver bullet, there is no single appropraite tab size. Each situation calls for a different tab size and tab representation.</p>
-<p>Sometimes we need tab character to be included, sometimes we need tab character to be replaced by spaces.</p>
-<h2 id="setting-tab-preferences-for-a-file-type">Setting Tab Preferences for a File Type</h2>
-<p>In this recipe I will show you how to set the tab size to a 4 spaces and replace tab with spaces. This is my preferred setting for Python files.</p>
-<p>Go ahead and open or create a new Python file.</p>
-<ol>
-<li>From the menu open <code>Preferences &gt; Settings - More &gt; Syntax Specific - User</code>. </li>
-<li>The <code>Python.sublime-settings</code> file is opened.</li>
-<li>Modify the file:<pre class="highlight"><code class="hljs json"> {
-     "<span class="hljs-attribute">tab_size</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-     "<span class="hljs-attribute">translate_tabs_to_spaces</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
- </span>}
-</code></pre>
-</li>
-<li>Save the <code>Python.sublime-settings</code> file</li>
-</ol>
-<h2 id="setting-tab-preferences-globally">Setting Tab Preferences Globally</h2>
-<p>In general I prefer to use two spaces for tabulation. It is possible that we define global Sublime Text editor tab settings.</p>
-<ol>
-<li>From the menu open <code>Preferences &gt; Settings - Default</code>.</li>
-<li>The <code>Preferences.sublime-settings</code> file is opened.</li>
-<li><p>Search for the <code>tab_size</code> and <code>translate_tabs_to__spaces</code> settings and modify them:</p>
-<pre class="highlight"><code class="hljs undefined"> // The number of spaces a tab is considered equal to
- "tab_size": 2,
-
- // Set to true to insert spaces when tab is pressed
- "translate_tabs_to_spaces": true,
-</code></pre>
-</li>
-</ol>
-<p>These are the default global settings. They are overridden by syntax specific settings. Earlier we set the tab settings for Python file. If we now open and edit a Python file, the tab_size will still be 4.</p>
+	<div class="post-content"><p><a href="http://sphinx-doc.org/tutorial.html">http://sphinx-doc.org/tutorial.html</a><br>Sphinx is a tool that makes it easy to create intelligent and beautiful documentation, written by Georg Brandl and licensed under the BSD license.</p>
+<p><a href="https://github.com/guillermooo/sublime-undocs">https://github.com/guillermooo/sublime-undocs</a><br>Sublime Text Unofficial documentation hosted on <a href="https://readthedocs.org/">ReadTheDocs</a> and built with <a href="http://sphinx-doc.org/tutorial.html">Sphinx</a>.</p>
 </div>
 </article>
 
