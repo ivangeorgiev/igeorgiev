@@ -27,12 +27,17 @@ docpadConfig = {
             
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				Professional IT consulting. Proven Data Management expertise. Data integration with DataStage, Hadoop, Hive, Spark, Impala and more. Analytical, Business Intelligence and Data Science solutons.
 				"""
 
 			# The website keywords (for SEO) separated by commas
-			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+			# The global keywords will appear on each page.
+			# Separate individual keywords with comma.
+			keywords_global: []
+
+			# The default keywords will appear on pages where no keywords and no tags are defined.
+			keywords_default: """
+				it,consulting,data management,data architecture
 				"""
 
 			# The website author's name
@@ -81,7 +86,7 @@ docpadConfig = {
 		# Get the prepared site/document keywords
 		getPreparedKeywords: ->
 			# Merge the document keywords with the site keywords
-			@site.keywords.concat(@document.keywords or []).join(', ')
+			@site.keywords_global.concat(@document.keywords or @document.tags or @site.keywords_default or []).join(', ')
 
 
 	# =================================
@@ -93,7 +98,7 @@ docpadConfig = {
 			database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
 
 		posts: (database) ->
-			database.findAllLive({tags:$has:'post'}, [date:-1])
+			database.findAllLive({flags:$has:'post'}, [date:-1])
 
 
 

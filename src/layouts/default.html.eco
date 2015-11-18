@@ -55,7 +55,7 @@
                         about="<%= document.url %>"
                         class="<%= 'active'	if @document.url is document.url %>"
                     >
-                        <a href="<%= document.url %>" property="dc:title"><%- '<span class="glyphicon glyphicon-' + document.icon + '"></span>' if @document.icon %>
+                        <a href="<%= document.url %>" property="dc:title"><%- '<span class="glyphicon glyphicon-' + document.icon + '"></span>' if document.icon %>
                             <%= document.title %>
                         </a>
                     </li>
@@ -84,6 +84,6 @@
 	</div><!-- /container -->
 
 	<!-- Scripts -->
-	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+	<%- @getBlock('scripts').add(@site.scripts).add(@document.scripts).toHTML() %>
 </body>
 </html>

@@ -1,7 +1,8 @@
 ---
 title: "Start Python Webserver from Command Line"
 layout: "post"
-tags: post,python,http server
+tags: [python,http server,web server,tips,cookbook]
+flags: post
 ---
 
 Both Python 2 and Python 3 provide HTTP server libaries that allow you to start HTTP server directly without any programming.
