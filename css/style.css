@@ -5,3 +5,7 @@
     max-width: 100%;
     max-height: 80px;
 }
+
+.fit-width {
+    max-width: 100%;
+}
