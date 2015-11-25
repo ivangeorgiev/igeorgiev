@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>Web Page Mockups with JavaScript Generated Placeholders | Ivan Georgiev</title>
+	<meta name="description" content="Professional IT consulting. Proven Data Management expertise. Data integration with DataStage, Hadoop, Hive, Spark, Impala and more. Analytical, Business Intelligence and Data Science solutons." />
+	<meta name="keywords" content="web design, javascript, placeholder, image, jquery" />
+	<meta name="author" content="Your Name" />
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.78.4" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Icons -->
+		<link rel="shortcut icon" href="images/icons/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="images/icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="/ext/bootstrap/css/bootstrap.css" /><link  rel="stylesheet" href="/ext/highlight.js/src/styles/default.css" /><link  rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ivan Georgiev</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                
+                    <li
+                        typeof="sioc:Page"
+                        about="/index.html"
+                        class=""
+                    >
+                        <a href="/index.html" property="dc:title"><span class="glyphicon glyphicon-home"></span>
+                            Home
+                        </a>
+                    </li>
+                
+                    <li
+                        typeof="sioc:Page"
+                        about="/blog.html"
+                        class=""
+                    >
+                        <a href="/blog.html" property="dc:title"><span class="glyphicon glyphicon-edit"></span>
+                            IT Blog
+                        </a>
+                    </li>
+                
+                    <li
+                        typeof="sioc:Page"
+                        about="/contact.html"
+                        class=""
+                    >
+                        <a href="/contact.html" property="dc:title"><span class="glyphicon glyphicon-envelope"></span>
+                            Contact me
+                        </a>
+                    </li>
+                
+            </ul>
+        </div><!--/.navbar-collapse -->
+
+        </div><!--/.container -->
+    </nav>
+    
+
+	<!-- Content -->
+	<div class="container">
+		<!-- Content -->
+		<section id="content" class="content">
+			<article id="post" class="post">
+	<h1>Web Page Mockups with JavaScript Generated Placeholders</h1>
+	<div class="post-content"><p>Using placeholder images is a very useful technique for rapid web page prototyping. Placeholder images are dummy, wireframe images that replace the actual image on the web page.</p>
+
+<p>Here are examples of what we will create in this tutorial.</p>
+
+<img src="placeholder_350_150_3.png" width="350" height="150">
+
+<img src="placeholder_350_150_4.png" width="150" height="150">
+
+<img src="placeholder_350_150_5.png" width="350" height="150">
+
+<p>There are different approaches to the placeholder images.</p>
+
+<ul>
+  <li>You can create placeholder images for each necessary size.</li>
+  <li>You can use an online service like <a href="http://placehold.it">http://placehold.it</a></li>
+  <li>Use javascript to generate placeholder images.</li>
+</ul>
+
+<p>Creating prototype images for each size is boring and time consuming task. The online service provides flexible way of generating placeholder images with specified size. Disadvantages of this approach include the need for persistent online connection and fixed visual appearance.</p>
+<p>It is possible to generate placeholder images on the client side. Here you have also many possible options. Here I will show you how to create placeholders using JavaScript and scalable vector graphics (SVG). This approach produce flexible and fully customizable images. You can control the appearance of the placeholders via CSS or if you want to create diffferent placeholders, you can modify the JavaScript.</p>
+
+<p>This is an intermediate tutorial. I will not go into details explaining every detail. I will assume that you already have working knowledge on HTML, CSS, JavaScript and jQuery. You should also have basic SVG understanding.</p>
+
+<h3>Building a Prototype</h3>
+
+<p>Let's start by manually creating a prototype that produces a 350-by-150 pixels placeholder image.</p>
+
+<img src="placeholder_350_150.png" width="350" height="150" />
+
+<pre class="highlight"><code class="hljs xml">
+<span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<span class="hljs-class">.placeholder-box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightsteelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> steelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-line</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> steelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">rect</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightsteelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">text</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">14px</span> sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> steelblue</span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">svg</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"350"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"150"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">g</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">rect</span> <span class="hljs-attribute">x</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"350"</span> <span class="hljs-attribute">y</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"150"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"placeholder-box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">rect</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">x1</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">y1</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">x2</span>=<span class="hljs-value">"350"</span> <span class="hljs-attribute">y2</span>=<span class="hljs-value">"150"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"placeholder-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">x1</span>=<span class="hljs-value">"350"</span> <span class="hljs-attribute">y1</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">x2</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">y2</span>=<span class="hljs-value">"150"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"placeholder-line"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">g</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"placeholder-label"</span> <span class="hljs-attribute">transform</span>=<span class="hljs-value">"translate(125,70)"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">rect</span> <span class="hljs-attribute">y</span>=<span class="hljs-value">"-2"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"16"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">rect</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">text</span> <span class="hljs-attribute">x</span>=<span class="hljs-value">"50"</span> <span class="hljs-attribute">dy</span>=<span class="hljs-value">"10"</span> <span class="hljs-attribute">text-anchor</span>=<span class="hljs-value">"middle"</span>&gt;</span>350x150<span class="hljs-tag">&lt;/<span class="hljs-title">text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">g</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+<p>Here we created a SVG element that includes a 350x150 pixels rectange and two diagonal lines. In the middle of the rectange we placed a label. To enable CSS styling, we added class attributes to the SVG elements:</p>
+
+<ul>
+  <li><code>placeholder-box</code> - the enclosing placeholder rectangle. You can customize stroke and fill. Interesting efects can be achieved with rounded corners.</li>
+  <li><code>placeholder-line</code> - the two diagonal lines. You can customize stroke. Typically the stroke for the lines is the same as the stroke for the placeholder box rectangle.</li>
+  <li><code>placeholder-label</code> - this class is added to the group that holds the label's text element and background rectangle.</li>
+</ul>
+
+<h3>Creating Placeholder Generation JavaScript</h3>
+
+<p>First we modify our HTML code so that it contains only a div with attribute <code>data-placeholder="350x150"</code>. We are going to use jQuery to select all the <code>div</code> elements with <code>data-placeholder</code> attribute and insert corresponding <code>svg</code> elements. At the end of the HTML, just before the closing <code>body</code> are inserted <code>script</code> elements for jQuery and our placeholder.js (will show it to you in a minute). </p>
+
+<pre class="highlight"><code class="hljs xml">
+<span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-placeholder</span>=<span class="hljs-value">"350x150"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/jquery-1.11.3.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"placeholder.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+<p>Here I have also moved the CSS code into external stylesheet <code>style.css</code>.</p>
+
+<p>[<code>style.css</code>]</p>
+<pre class="highlight"><code class="hljs css">
+<span class="hljs-class">.placeholder-box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightsteelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> steelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-line</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> steelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">rect</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightsteelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">text</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">14px</span> sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> steelblue</span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+
+<p>And here is the JavaScript code. The placeholder JavaScript code is stored in a <code>placeholder.js</code> file.</p>
+
+<p>[<code>placeholder.js</code>]</p>
+<pre class="highlight"><code class="hljs javascript">
+$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  $(<span class="hljs-string">'[data-placeholder]'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_,ph)</span> </span>{
+    <span class="hljs-keyword">var</span> el = $(ph),
+        data = el.data(<span class="hljs-string">'placeholder'</span>),
+        dim = (data) ? data.split(<span class="hljs-string">'x'</span>) 
+                     : [el.width(), el.height()],            
+        w = dim.shift() || el.width(),
+        h = dim.shift() || el.height(),
+        svg;
+
+    svg = $(<span class="hljs-string">'&lt;svg&gt;&lt;/svg&gt;'</span>)
+      .attr(<span class="hljs-string">'width'</span>, w)
+      .attr(<span class="hljs-string">'height'</span>, h)
+      .appendTo(ph)
+        .append(
+          $(<span class="hljs-string">'&lt;rect x="1" y="1"&gt;&lt;/rect&gt;'</span>)
+            .attr(<span class="hljs-string">'width'</span>, w-<span class="hljs-number">2</span>)
+            .attr(<span class="hljs-string">'height'</span>, h-<span class="hljs-number">2</span>)
+            .addClass(<span class="hljs-string">'placeholder-box'</span>)
+        ) <span class="hljs-comment">// rect</span>
+        .append(
+          $(<span class="hljs-string">'&lt;line x1="5", y1="5"&gt;&lt;/line&gt;'</span>)
+            .attr(<span class="hljs-string">'x2'</span>, w-<span class="hljs-number">5</span>)
+            .attr(<span class="hljs-string">'y2'</span>, h-<span class="hljs-number">5</span>)
+            .addClass(<span class="hljs-string">'placeholder-line'</span>)
+        ) <span class="hljs-comment">// line1</span>
+        .append(
+          $(<span class="hljs-string">'&lt;line x2="5", y1="5" /&gt;'</span>)
+            .attr(<span class="hljs-string">'x1'</span>, w-<span class="hljs-number">5</span>)
+            .attr(<span class="hljs-string">'y2'</span>, h-<span class="hljs-number">5</span>)
+            .addClass(<span class="hljs-string">'placeholder-line'</span>)
+        ) <span class="hljs-comment">// line2</span>
+        .append(
+          $(<span class="hljs-string">'&lt;g class="placeholder-label" /&gt;'</span>)
+            .append(
+              $(<span class="hljs-string">'&lt;rect width="100" height="18" /&gt;'</span>)
+                .attr(<span class="hljs-string">'x'</span>, w/<span class="hljs-number">2</span> - <span class="hljs-number">50</span>)
+                .attr(<span class="hljs-string">'y'</span>, h/<span class="hljs-number">2</span> - <span class="hljs-number">9</span>)
+            )
+            .append(
+              $(<span class="hljs-string">'&lt;text text-anchor="middle" /&gt;'</span>)
+                .attr(<span class="hljs-string">'x'</span>, w/<span class="hljs-number">2</span>)
+                .attr(<span class="hljs-string">'y'</span>, h/<span class="hljs-number">2</span> + <span class="hljs-number">4</span>)
+                .append(w+<span class="hljs-string">'x'</span>+h)
+            )
+        ) <span class="hljs-comment">// label</span>
+    ;
+    el.width(w);
+    el.height(h);
+
+    el.html(el.html());
+  });
+})
+</code></pre>
+
+<p>Now if you open the page into a browser, you should see a generated placeholder image.</p>
+
+<p><img src="placeholder_350_150_1.png" width="350" height="150" /></p>
+
+<h3>Styling Examples</h3>
+
+<p>Here are some examples of different placeholder styling.</p>
+
+<h4>Placeholder Images Without Lines</h4>
+
+<p>If you set <code>stroke: none</code> for the <code>.placeholder-line</code>, you will remove the placeholder lines.</p>
+
+<pre class="highlight"><code class="hljs css">
+<span class="hljs-class">.placeholder-box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightcyan</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> cyan</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-line</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">rect</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightcyan</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.placeholder-label</span> <span class="hljs-tag">text</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">14px</span> sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> steelblue</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+
+<p><img src="placeholder_350_150_2.png" width="350" height="150">
+</p>
+
+<p>Similarly, set <code>fill: none</code> for <code>.placeholder-label text</code> to remove the text label.</p>
+
+<h4>Placeholder Images with Rounder Corners</h4>
+
+<p>Add <code>rx</code> and <code>ry</code> CSS rules for <code>.placeholder-box</code> to create rounder corner placeholder image.</p>
+
+<pre class="highlight"><code class="hljs css">
+<span class="hljs-class">.placeholder-box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">fill</span>:<span class="hljs-value"> lightsteelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke</span>:<span class="hljs-value"> steelblue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">stroke-width</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">rx</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">ry</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+
+<p><img src="placeholder_350_150_3.png" width="350" height="150"></p>
+
+<h3>Excercises</h3>
+
+<ol>
+  <li>Elliptical/Circular image. Try using percentage values for <code>rx</code> and <code>ry</code> CSS rules to achieve circular/elliptiical image.</li>
+  <li>Custom label text. Introduce <code>data-text</code> attribute.
+    <pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-placeholder</span>=<span class="hljs-value">"150x150"</span> <span class="hljs-attribute">data-text</span>=<span class="hljs-value">"avatar picture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+    <img src="placeholder_350_150_4.png" width="150" height="150">
+</li>
+  <li>Extend the JavaScript so that the label text can be rendered vertically. The text direction is specified using a <code>data-text-dir</code> attribute:<br/> 
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-placeholder</span>=<span class="hljs-value">"150x150"</span> <span class="hljs-attribute">data-text-dir</span>=<span class="hljs-value">"vertical"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+    <img src="placeholder_350_150_5.png" width="350" height="150"></li>
+</ol></div>
+</article>
+
+<footer>
+</footer>
+		</section>
+    <hr>
+		<!-- Footer -->
+		<footer>
+			<p class="pull-left">&copy; Ivan Georgiev 2015</p>
+			<p class="pull-right">
+				This website was last updated at 2015-11-24T21:09:19.600Z
+			</p>
+		</footer>
+	</div><!-- /container -->
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/ext/jquery-1.11.3.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/ext/bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/js/app.js"></script>
+</body>
+</html>
