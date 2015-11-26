@@ -9,9 +9,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<!-- Our site title and description -->
-	<title>IT Blog | Ivan Georgiev</title>
+	<title>Spark on Windows in Under 5 Minutes | Ivan Georgiev</title>
 	<meta name="description" content="Professional IT consulting. Proven Data Management expertise. Data integration with DataStage, Hadoop, Hive, Spark, Impala and more. Analytical, Business Intelligence and Data Science solutons." />
-	<meta name="keywords" content="it,consulting,data management,data architecture" />
+	<meta name="keywords" content="hadoop, bigdata, bigdata, spark, apache spark" />
 	<meta name="author" content="Ivan Georgiev" />
 
 	<!-- Output DocPad produced meta elements -->
@@ -68,7 +68,7 @@
                     <li
                         typeof="sioc:Page"
                         about="/blog.html"
-                        class="active"
+                        class=""
                     >
                         <a href="/blog.html" property="dc:title"><span class="glyphicon glyphicon-edit"></span>
                             IT Blog
@@ -105,30 +105,55 @@
 	<div class="container">
 		<!-- Content -->
 		<section id="content" class="content">
-			<article id="page" class="page">
-	<h1>IT Blog</h1>
-	<div class="page-content">
+			<article id="post" class="post">
+	<h1>Spark on Windows in Under 5 Minutes</h1>
+	<div class="post-content"><div class="row">
+  <div class="col-sm-3"><img src="/images/logo_spark.png"></div>
+  <div class="col-sm-9">
+    <p>Spark can run over a variety of cluster manager, including Hadoop YARN, Apache Mesos, and Spark itself called Standalone Scheduler. In this recipe we are going to prepare Windows for running Spark, create and execute a Spark workflow. Installing Spark under Linux or MacOS is very similar.</p>
+    <p>To get Spark up and running, you need to complete following tasks:</p>
+    <ol>
+      <li>Make sure Java Development Kit (JDK) is Installed</li>
+      <li>Download and Install Apache Spark</li>
+      <li>Configure Windows Environment</li>
+    </ol>
+  </div>
+</div>
 
-<nav class="linklist">
-	
-		<li><span>Tue Nov 24 2015</span>
-		&raquo;
-		<a href="/posts/web/placeholder-images-javascript.html">Web Page Mockups with JavaScript Generated Placeholders</a></li>
-	
-		<li><span>Fri Nov 20 2015</span>
-		&raquo;
-		<a href="/posts/web/syntax-highlight-client-javascript-prettify.html">Client Side Code Syntax Highlighting with JavaScript and prettify.js</a></li>
-	
-		<li><span>Wed Nov 18 2015</span>
-		&raquo;
-		<a href="/posts/python/python-web-server.html">Start Python Webserver from Command Line</a></li>
-	
-		<li><span>Tue Nov 10 2015</span>
-		&raquo;
-		<a href="/posts/misc/sublime-text-tab-size.html">Set Sublime Text Editor Tab Size for a File Type and Globally</a></li>
-	
-</nav></div>
+<div class="row">
+  <h3>Make Sure JDK is Installed</h3>
+  <p>If you are not sure, you have JDK installed, better is to install the JDK.</p>
+  <ol>
+    <li>Open a browser window and navigate to your favorite search engine.</li>
+    <li>Search for <code>JDK SE Download</code> and follow the link to the Oracle's JDK download page.</li>
+    <li>Click the button to JDK Download.</li>
+    <li>Accept the License Agreement and click the link to the package for you operating system. Most likely this will be the <code>Windows  </code> package.</li>
+    <li>Once the dowload is complete. Run the installer and follow the installation steps.</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h3>Install Apache Spark</h3>
+  <ol>
+    <li>Navigate your browser to the <a href="http://spark.apache.org/">Apache Spark home</a>.</li>
+    <li>Configure your download:
+      <ul>
+        <li>Choose a Spark release - Select the latest version</li>
+        <li>Choose a package type - Select <code>Pre-built for Hadoop 2.6 and later</code></li>
+        <li>Choose a dowload type - <code>Direct Download</code></li>
+      </ul>
+    </li>
+    <li>Click the package download link and save the package to your disk.</li>
+    <li>Use your favorite archiver (my favorite is <a href="http://www.7-zip.org/">7-zip</a>) to extract spark. I will assume you extracted the archive into your root directory (C:\)</li>
+    <li>Rename the spark directory to C:\spark</li>
+  </ol>
+</div></div>
 </article>
+
+<footer>
+Posted on: Thu Nov 26 2015<br>
+Tags: hadoop,bigdata,bigdata,spark,apache spark
+</footer>
 		</section>
     <hr>
 		<!-- Footer -->
