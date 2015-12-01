@@ -48,6 +48,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
             $scope.userInfo = response;
             $scope.picture = response.picture.data.url;
             $scope.permissions = response.permissions.data;
+            $scope.posts = response.posts.data;
             console.log(response);
         },
         function(err){
