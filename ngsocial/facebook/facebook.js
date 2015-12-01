@@ -59,7 +59,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
             $scope.picture = response.picture.data.url;
             $scope.permissions = response.permissions.data;
             $scope.posts = response.posts.data;
-            // console.log(response);
+            console.log(response);
         },
         function(err){
             $scope.welcomeMsg = "Please Log In"
