@@ -42,7 +42,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
     };
 
     $scope.postStatus = function() {
-        var body = this.body;
+        var body = this.postBody;
         console.log("Post: " + body);
         $facebook.api('/me/feed', 'post', {message:body}).then(function(response) {
             console.log("Posted");
