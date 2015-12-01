@@ -29,6 +29,12 @@
   padding: 0;
 }
 
+.stbody {
+  min-height:70px;
+  margin-bottom:10px;
+  border-botttom:dashed 1px #cc0000;
+}
+
 .stimage {
   float: left;
   height:50px;
