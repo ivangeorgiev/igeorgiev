@@ -5,7 +5,7 @@
           <button type="button" class="btn btn-default" ng-click="login()">Login</button>
         </div>
         <div ng-if="isLoggedIn">
-          <a href="userInfo.link" target="__blank"><img ng-src="{{picture}}"></a>
+          <a href="{{userInfo.link}}" target="__blank"><img ng-src="{{picture}}"></a>
           <button type="button" class="btn btn-default" ng-click="logout()">Logout</button>
           <br><br>
           <div class="well">
