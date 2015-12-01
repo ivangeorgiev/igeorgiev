@@ -28,3 +28,28 @@
   content: "";
   padding: 0;
 }
+
+.stimage {
+  float: left;
+  height:50px;
+  width:50px;
+  border: solid 1px #dedede;
+  padding:5px;
+}
+
+.sttext {
+  margin-left:70px;
+  min-height:50px;
+  word-wrap:break-word;
+  overflow:hidden;
+  padding:5px;
+  display:block;
+  font-family:'Georgia','Times New Roman',Times, serif;
+}
+  
+.sttime {
+  font-size:11px;
+  color:#999;
+  font-family:Arial,Helvetica,sans-serif;
+  margin-top:5px;
+}
