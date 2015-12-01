@@ -41,6 +41,14 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
         });
     };
 
+    $scope.postStatus = function() {
+        var body = this.body;
+        $facebook.api('/me/feed', 'post', {message:body}).then(function(response) {
+            $scope.msg = 'Thanks for posting.';
+            refresh();
+        })
+    };
+
     function refresh() {
         $facebook.api("/me?fields=id,name,first_name,last_name,email,gender,locale,link,picture,permissions,posts").then(function(response) {
             $scope.welcomeMsg = "Welcome " + response.name;
