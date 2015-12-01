@@ -1,7 +1,12 @@
     <div class="row" ng-controller="facebookCtrl">
       <div class="col-md-4">
         <h4>{{welcomeMsg}}</h4>
-        <button type="button" class="btn btn-default" ng-click="login()">Login</button>
+        <div ng-if="isLoggedIn == false">
+          <button type="button" class="btn btn-default" ng-click="login()">Login</button>
+        </div>
+        <div ng-if="isLoggedIn">
+          <button type="button" class="btn btn-default" ng-click="logout()">Login</button>
+        </div>
         <br><br>
         <div class="well">
           <h4>User Info</h4>
