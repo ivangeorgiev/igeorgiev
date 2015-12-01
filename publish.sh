@@ -10,3 +10,4 @@ git status
 git add . --all
 git commit -m "Working on ngsocial"
 
+git push origin gh-pages -u
