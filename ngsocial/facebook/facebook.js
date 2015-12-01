@@ -25,6 +25,11 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
        }(document, 'script', 'facebook-jssdk'));
 })
 
-.controller('facebookCtrl', [function() {
-
+.controller('facebookCtrl', ['$scope', '$facebook', function($scope, $facebook) {
+    $scope.isLoggedIn = false;
+    $scope.login = function() {
+        $facebook.login().then(function() {
+            console.log("LOGGED IN")
+        });
+    }
 }]);
