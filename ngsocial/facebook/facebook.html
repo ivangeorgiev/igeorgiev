@@ -33,7 +33,7 @@
 
 
       <div class="col-md-8">
-        <div ng-if="isLoggedIn" style="background-image:url({{cover.source}})">
+        <div ng-if="isLoggedIn" style="background-image:url("{{cover.source}}")">
           <h3>Welcome to Facebook!</h3>
           <form ng-submit="postStatus()">
             <div class="form-group">
