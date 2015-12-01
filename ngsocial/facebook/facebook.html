@@ -6,26 +6,26 @@
         </div>
         <div ng-if="isLoggedIn">
           <button type="button" class="btn btn-default" ng-click="logout()">Logout</button>
-        </div>
-        <br><br>
-        <div class="well">
-          <h4>User Info</h4>
-          <ul>
-            <li>ID: someID</li>
-            <li>First Name: John</li>
-            <li>Last Name: Doe</li>
-            <li>Email Address: john@gmail.com</li>
-            <li>Gender: Male</li>
-            <li>Locale: enGB</li>
-          </ul>
-        </div>
+          <br><br>
+          <div class="well">
+            <h4>User Info</h4>
+            <ul>
+              <li>ID: {{userInfo.id}}</li>
+              <li>First Name: {{userInfo.first_name}}</li>
+              <li>Last Name: {{userInfo.last_name}}</li>
+              <li>Email Address: {{userInfo.email}}</li>
+              <li>Gender: {{userInfo.gender}}</li>
+              <li>Locale: {{userInfo.locale}}</li>
+            </ul>
+          </div>
 
-        <br>
-        <div class="well">
-          <h4>Permissions</h4>
-          <ul>
-            <li></li>
-          </ul>
+          <br>
+          <div class="well">
+            <h4>Permissions</h4>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
         </div>
       </div>
 
