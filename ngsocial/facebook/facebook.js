@@ -10,8 +10,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
 }])
 .config( function( $facebookProvider ) {
   $facebookProvider.setAppId('520135284812823');
-  $facebookProvider.setPermissions("email","public_profile",
-    "user_posts", "publish_actions", "user_photos");
+  $facebookProvider.setPermissions("email,public_profile,user_posts,publish_actions,user_photos");
 })
 
 
