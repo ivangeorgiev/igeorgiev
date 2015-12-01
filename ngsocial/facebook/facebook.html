@@ -43,10 +43,10 @@
         </form>
 
 
-        <div ng-repeat="post in posts">
-          <p>{{post.story}}</p>
-          <p>{{post.created_time | date : "MMM d"}}</p>
-          <p>{{post.message}}</p>
+        <div class="list-group" ng-repeat="post in posts">
+          <p class="list-group-item-text">{{post.story}}</p>
+          <p class="text-primary">On {{post.created_time | date : "MMM d' at 'H:mm:ss"}}</p>
+          <p class="list-group-item-text">{{post.message}}</p>
         </div>
       </div>
     </div>
