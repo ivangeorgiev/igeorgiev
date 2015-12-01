@@ -8,5 +8,5 @@ angular.module('ngSocial', [
   'ngSocial.facebook'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/ngSocial'});
+  $routeProvider.otherwise({redirectTo: '/facebook'});
 }]);
