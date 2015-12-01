@@ -5,6 +5,8 @@ rm -rf ngsocial
 mkdir ngsocial
 cp -R ../ngsocial/app/* ngsocial
 
+git status
+
 git add . --all
 git commit -m "Working on ngsocial"
 
